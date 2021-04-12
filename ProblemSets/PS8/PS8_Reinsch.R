@@ -10,6 +10,7 @@ X <- matrix(rnorm(N*k,mean=0,sd=sigma),N,k)
 X[,1]<-1 #first column of X should all be ones
 eps <- rnorm(N,mean=0,sd=0.5)
 betaTrue<-as.vector(runif(k))
+beta <- c(1.5, -1, -0.25, 0.75, 3.5, -2, 0.5, 1, 1.25, 2)
 Y<-X%*%betaTrue + eps
 estimate<-lm(Y~X-1)
 library(tidyverse)
@@ -28,16 +29,14 @@ maxiter <- 500000
 
 ## Our objective function
 objfun <- function(beta,y,X) {
-  return ( sum((y-X%*%beta)^2) )
+  return ( sum((Y-X%*%beta)^2) )
 }
 
 # define the gradient of our objective function
-gradient <- function(betols,y,X) {
-  return ( as.vector(-2*t(X)%*%(Y-X%*%betols)) )
+gradient <- function(beta,y,X) {
+  return ( as.vector(-2*t(X)%*%(Y-X%*%beta)) )
 }
 
-## initial values
-beta <- runif(dim(X)[2]) #start at uniform random numbers equal to number of coefficients
 
 # randomly initialize a value to beta
 set.seed(100)
@@ -65,15 +64,15 @@ print(paste("The minimum of f(beta,y,X) is ", beta, sep = ""))
 
 #LBFGS
 ## Our objective function
-objfun <- function(betols,y,X) {
-  return (sum((y-X%*%betols)^2))
+objfun <- function(beta,y,X) {
+  return (sum((y-X%*%beta)^2))
   # equivalently, if we want to use matrix algebra:
   # return ( crossprod(y-X%*%beta) )
 }
 
 ## Gradient of our objective function
-gradient <- function(betols,y,X) {
-  return ( as.vector(-2*t(X)%*%(Y-X%*%betols)) )
+gradient <- function(beta,y,X) {
+  return ( as.vector(-2*t(X)%*%(Y-X%*%beta)) )
 }
 
 ## initial values
