@@ -1,0 +1,235 @@
+\documentclass[12pt, english]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{RGB}{0.,0.,139.}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{lipsum}
+
+\usepackage[authoryear]{natbib}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{pdflscape}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},backref=false,
+ colorlinks,citecolor=black,filecolor=black,
+ linkcolor=black,urlcolor=black]
+ {hyperref}
+\usepackage[all]{hypcap} % Links point to top of image, builds on hyperref
+\usepackage{breakurl}    % Allows urls to wrap, including hyperref
+
+\linespread{2}
+
+\usepackage[authoryear]{natbib}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+
+\begin{document}
+\begin{doublespace}
+\title{The Racial Wage Gap and the Coronavirus\thanks{I want to thank Dr. Tyler Ransom for his feedback and guidance.}}
+\end{doublespace}
+\author{Emma Reinsch\thanks{Department of Economics, University of Oklahoma.\
+E-mail~address:~\href{mailto:e.reinsch@ou.edu}{e.reinsch@ou.edu}}}
+
+% \date{\today}
+\date{April 13, 2021}
+
+
+\maketitle
+\section{Abstract}
+
+
+In the wake of the COVID-19 (coronavirus) pandemic, overlooked social problems have resurfaced. The movement at the forefront of all news and social media websites was the Black Lives Matter movement. The protests that began in the United States due to the police brutality experienced by African Americans quickly spread to the rest of the world. These protests were a culmination of frustration experienced by this marginalized social group and the death of George Floyd was only the climax to centuries of fury. Not only must African Americans continuously worry about the threat of police brutality, they also face additional discrimination of all types, everyday. This paper will examine a portion of race-based discrimination. In previous research, I study the impact of the wage gap on gender-based discrimination with an emphasis on STEM fields. This paper will study the wage gap between White and African Americans by controlling for additional mitigating factors. Using one log to level simple linear regression and 5 multiple linear regression models, I will predict the wage gap between African Americans and White Americans across all occupations. I have set up a model that will test hourly wage with race (Black Americans), women, occupation, marital status, number of children present in the household, level of education, and age. My second main regression model will test the same relationship listed above as well as variables specific to COVID-19. Using cross-sectional data ranging from 2015 to 2021 retrieved from the Current Population Survey (CPS), I performed 6 linear regressions and found that, in each case, hourly income earned by African Americans is significantly less than income earned by White Americans.
+\section{Introduction}
+
+The year 2020 was one for the history books. It was mainly a year that made the world reflect on their freedoms like sitting inside a restaurant with elderly family members or simply taking a walk outside. On January 21st, 2020, the first COVID-19 case was documented in the United States (\citet{Hist2021}. While most of the population refused to acknowledge the disease’s presence, COVID-19 rapidly spread throughout different countries which prompted the worldwide “lockdown” on March 13th, 2020 (\citet{Hist2021}. In a frantic effort to reduce the spread of the virus and “flatten the curve”, health experts encouraged social distancing, hand washing, and wearing masks. While the pandemic ripped through the world destroying families and the global economy, the U.S. was also experiencing a different type of epidemic: racial discrimination and injustice. 
+
+The call for social justice and police reform did not start in 2020. However, the death of George Floyd in May 2020 sparked growing conversations surrounding the topic of equality (\citet{DAMORE2020}. Soon, efforts to promote education of Black history and the BlackLivesMatter movement became the forefronts of newscasts and social media websites. While this growing awareness encompassing racial discrimination and ending racism have undoubtedly improved the lives of Black Americans, it is important to understand how different types of microaggressions are affecting this racial group. Along with blatant, unfavorable bias shown towards African Americans, the income wage gap between Black and White Americans quantifies some of the discrimination faced by this vulnerable social group. Furthermore, it is also relevant to note the disproportionate impact of COVID-19 on African Americans and investigate the change in the income gap (hourly wage gap) after taking the pandemic into account. 
+
+In my previous research, I examine the residual discrimination in the form of the gender-pay gap for women employed in STEM fields while controlling for mitigating factors. On average, women in STEM fields earned approximately 16\% less than men according to 2018 American Community Survey (ACS) data (\citet{REINSCH2020}. While it is difficult to compare across different surveys, the trends outlined by (\citet{McCall2001} show that the racial wage gap may be larger between races than between genders. This research will employ 2015-2021 Current Population Survey (CPS) data and draw conclusions about the racial wage gap between highly educated Black and White Americans across all occupations who hold at least a bachelor’s degree. Data from March 2020 to February 2021 will allow us to draw specific conclusions about the impact of the pandemic on the racial wage gap.
+
+Previous literature provides the experiences of highly educated minorities (specifically Blacks and Hispanics) in terms of mismatched job placement and wage penalties. To further expand on the research surrounding the racial wage gap, I explore the disparate effects of COVID-19 on Black Americans’ wages through unemployment during the pandemic, job loss, and their abilities to work-from-home.
+
+The remainder of this research paper will present a brief literature review, descriptions of the data, variables, and statistical regression models used to conduct this research, explanations of the obtained results, as well as a discussion of the results and concluding remarks.
+
+\section{Literature Review}
+
+The field of labor economics is one that most researchers will never fully comprehend; some data is simply unobservable and cannot be accurately measured. For instance, when attempting to measure a wage gap, no matter how many regressions econometricians run, the reasons behind the existence of wage gaps may not ever be fully discernible. In the meantime, researchers must gather the available evidence to draw conclusions. 
+
+Throughout the last two years, I have become fascinated with labor economics. In previous projects, I concentrated my research towards the gender income wage gap as a form of gender-based discrimination in STEM and economics-related fields. I broaden the aforementioned study by investigating the hourly wage gap experienced between Black and White Americans pre and “post” pandemic. Historically, the racial wage gap has been crowded out by more blatant, systemic racism (\citet{Koechlin2019}. In fact, the racial earnings gap is larger between races than between genders (\citet{McCall2001}.The residual discrimination felt by African Americans is exhibited in many ways: police brutality, mismatched economic opportunities, higher rates of incarceration, and inadequate access to healthcare during a global pandemic (\citet{CLAY2021}. The year 2020 has reminded society that it still has a long way to go before achieving equity and equality. While my data analysis will only focus on one aspect of potential discrimination, the racial wage gap, it is important to understand previous research surrounding racial discrimination in the labor market. 
+
+An important reason behind the existence of the racial wage gap is attributed to mismatched employment opportunities. According to (\citet{LuLi2021}, even highly educated minorities and immigrants are disproportionately channeled into mismatched jobs. In turn, minorities face greater wage penalties due to vertical disparity. This shows that nativity stratification is correlated with future job placement and earnings. Other researchers also conclude that there exists a large negative effect of immigration on the relative wages of Hispanic and African Americans (\citet{McCall2001}. While the 1967 extension of the minimum wage explains over 20\% of the reduction in the racial earnings gap (\citet{DerenoncourtMontialoux2020}, progress continues to stall due to mismatched employment and education opportunities largely attributed to native geographic location (\citet{LuLi2021}. In addition, even though the wage gap has slightly decreased, and more minorities are finding employment, there is evidence that the type of industry African and Hispanic Americans chose to work in are hiding true unemployment (\citet{LangLehmannJee-Yeon2012}. Figure \ref{fig:fig1} and Figure \ref{fig:fig2} show that while income overtime for both racial groups is steadily increasing, we observe that the y-axis for both groups have different values. While White Americans' yearly income has increased above \$$65,000$, African Americans' yearly income has just crossed the \$$40,000$ range. These images show that White Americans make over \$$25,000$ more per year than African Americans.
+	
+Next, while the income wage gap between Black and White Americans is large, the wealth gap is larger. The latter can be partially explained by centuries of racist exclusion, violence, and plunder. Furthermore, as previously mentioned, labor economists have failed to draw complete conclusions about wage and wealth gaps since they ignore essential ways that racial inequality has been reproduced by U.S. capitalism (\citet{Koechlin2019}. U.S. capitalism is built upon the Neoclassical notion that if a person works hard, they can climb the social ladder. This notion is also known as The American Dream. While many individuals benefit from this economic system, it is important to understand the institutional disadvantages experienced by susceptible social groups. As \citet{LuLi2021} describe in their study, there are other institutional barriers preventing African Americans and other visible minorities from achieving the American Dream. These barriers include native geographic location, access to education (inner-city school vs suburban school), access to higher education, and adequate access to healthcare. In particular, more than half of the Black-White wage gap in the United States in the early 1990s can be accounted for by discrepancies between human capital accumulation (\citet{Koechlin2019}. By filtering my data to only include individuals holding at least a bachelor's degree, I eliminate the human capital model comparison.
+
+There is no “simple fix” to the wage gap problem other than a policy overhaul and the elimination of taste-based discrimination. While there has been a slow improvement, society still has not reached the point of equality. More awareness is drawn to the problem in 2020 after the controversial killing of George Floyd and Breonna Taylor. However, African Americans face another dangerous threat: the coronavirus. Studies show that racial disparities exist in the way that COVID-19 has impacted individuals. African Americans, in fact, are disproportionately affected by this disease. There exists an association between race and higher mortality rates \citet{CLAY2021}. The reasons behind this statistic include age, a higher presence of comorbidities in African Americans, health care affordability issues, and access issues. Not only are African Americans more likely to lose their lives to this disease, but they may also be worse off if they manage to survive. I hypothesize that African Americans are more likely to become unemployed during the pandemic than their white counterparts. 
+
+As previously mentioned, this research and data analysis will focus on the (hourly) racial wage/earnings gap across all occupations. I contribute to the labor economics literature by studying the hourly, average racial wage gap before the pandemic began as well as the hourly wage gap throughout the pandemic. I am testing whether specific COVID-19 factors such as availability to work (with pay) remotely and unemployment due to COVID-19 disproportionately affected Black Americans as opposed to White Americans.
+
+\section{Data}
+\begin{itemize}
+    \item Source of Data
+    I extracted my data from IPUMS-CPS using variables and sampling from the Current Population Survey (CPS). This data is authorized by the Minnesota Population Center with an affiliation to the University of Minnesota. The Public Use Microdata Set from the Current Population Survey uses data from the Census to easily identify critical variables and manipulate data for research purposes. The data extracted focuses primarily on individuals instead of households. I selected data ranging from 2015 to 2021 (January and February exclusively) representing the United States. My audience is likely to be college graduates holding at least a bachelor’s degree and individuals in the labor force (ages 25 to 65). My regressions were calculated using 91,219 observations. 
+    \item Description of Selected Variables
+    
+    The main variables used are reported in Table \ref{tab:variables}
+    
+    The income-wage variable was mutated to the natural logarithm of individuals’ wages. This allowed for greater ease when interpreting since all values in the sample were positive. The conversion from hour-wage to log(hourwage) allows the independent variables to be interpreted as a percentage change in hourly wage as each variable increases by one unit. The log(hourwage) variable was manipulated to include incomes ranging from \$$10$ to \$$500$ per hour since I predict most individuals with holding at least a bachelor’s degree will earn hourly wages within this span. I filter the data to only include employed individuals (present in the labor force). 
+
+    The primary independent variable being tested in my hypothesis is Black Americans’ earnings compared to White Americans’ earnings which is measured by black. Additional independent variables are represented by female, AGE, AGE.squared, EDUC, OCC, nchild, notmarried, covid, covidpayremote, covidunable, and covidlook.
+
+    Prior to running regressions on the selected data, I made the following manipulations:
+        \begin{itemize}
+            \item Black: black, two or more races, and three or more races where black was included = 1, all others = 0 
+            \item Female: female = 1, male = 0
+            \item AGE: Only individuals between the ages of 25 and 65 were included in my analysis.
+            \item AGE.squared: Ages between 25 and 65 have been squared for additional accuracy.
+            \item EDUC: Only individuals with a bachelor’s degree and above were included: bachelor’s degree = 111 (EDUC> =111).
+            \item Notmarried: married = 0, not married (single, widowed, divorced, separated) = 1
+            \item Nchild: no children = 0, 1 or more children in the household = 1
+            \item Covid: Observations occurring after 04/2020 = 1, all others = 0
+            \item Covidpayremote: Observations were able to work remotely with pay = 1, others = 0
+            \item Coviduable: Observations were unable to work due to COVID-19 = 1, others = 0
+            \item Covidlook: Observations were looking for work during the COVID-19 pandemic = 1, others = 0
+        \end{itemize}
+    \item Verifying Gauss-Markov Assumptions
+    \begin{enumerate}
+        \item Linear in Parameters – The model consists of a multiple linear regression that is linear in parameters and follows 
+            \begin{equation}
+                Y = \beta_0 + \beta_1 + ... + u
+            \end{equation}
+        \item Random Sampling — The data includes approximately 91,219 observations from the United States, across a wide range of demographics. The sampling is to be assumed as random.
+        \item No perfect collinearity — There is no perfect collinearity between the variables in the model. No correlation between x variables.
+        \item E (u|x) = 0; It will be difficult to assume Gauss-Markov Assumption 4 for this sample. The results below across all regression models are significant, there sample size is large, and I have included many relevant independent variables which should control for omitted variable bias. However, the R-squared across the models show that the independent variables only slightly account for the variation in the dependent variable (log(incwage)). 
+        \item Homoskedasticity — The model and variables constructed from the data are assumed to have constant variance of u’s over x variables.
+    \end{enumerate}
+\end{itemize}
+\section{Methods and Models}
+Adapted from the classical linear regression model, 
+    \begin{equation}
+        Y = \beta + \epsilon
+    \end{equation}, where Y is the dependent variable log(hourwage) and X is all the independent variables (listed in Table \ref{tab:variables}), the following models can be obtained:
+    \begin{itemize}
+        \item Model 1: Simple Linear Regression Model
+        
+        The first model is a simple regression model. I only regress black (Black Americans) on hourly wage. I observe the direct relationship between race and earnings.
+        \begin{equation}
+        log(hourwage) = \beta_0 + \beta_1black + u
+        \end{equation}
+        
+        \item Model 2: Multiple Linear Regression Model
+        
+        The second model is a multiple regression model. This model includes black, female, AGE, AGE.squared, OCC, EDUC, notmarried, and nchild. I examine the average residual hourly wage gap between Black and White Americans over a six year period.
+        
+\begin{multline}
+log(hourwage) = \beta_0 + \beta_1black + \beta_2female + \beta_3AGE + \beta_4AGE.squared + \beta_5OCC + \beta_6EDUC +\\ \beta_7notmarried + \beta_8nchild + u
+\end{multline}
+        \item Model 3: Multiple Linear Regression Model with interaction term
+        
+        The third model is also a multiple linear regression model with the dummy variable black interacting with the dummy variable female. The interaction between these variables will allow us to directly examine the influence of gender on the racial hourly wage gap. 
+        \begin{multline*}
+            log(hourwage) = \beta_0 + \beta_1black*female + \beta_2AGE
+            + \beta_3AGE.squared + \beta_4OCC + \beta_5EDUC +\\ \beta_6notmarried + \beta_7nchild + u
+        \end{multline*}
+        \item Model 4: Multiple Linear Regression Model with interaction term
+        
+        The fourth model is also a multiple linear regression model with the dummy variable black interacting with the variable OCC (occupation). The interaction between these variables will allow us to directly observe the racial hourly wage gap across all occupations.
+        \begin{multline*}
+            log(hourwage) = \beta_0 + \beta_1black*OCC + \beta_2female + \beta_3AGE + \beta_4AGE.squared + \beta_5EDUC +\\ \beta_6notmarried + \beta_7nchild + u
+        \end{multline*}
+        \item Model 5: Multiple Linear Regression Model with interaction term
+
+        The fifth model is also a multiple linear regression model with the dummy variable black interacting with the variable EDUC (bachelor’s degree education and above). The interaction between these variables allows us to investigate how level of education influences the racial hourly wage gap.
+        \begin{multline*}
+            log(hourwage) = \beta_0 + \beta_1black*EDUC + \beta_2female + \beta_3AGE + \beta_4AGE.squared + \beta_5OCC +\\ \beta_6notmarried + \beta_7nchild + u
+        \end{multline*}
+        \item Model 6: Multiple Linear Regression Model with COVID-19 variables and interaction terms
+
+        The sixth model is also a multiple linear regression model with new variables describing COVID-19 impacts on employment and wage. I hypothesize that the inclusion of these covid variables will worsen the hourly wage gap between Black and White Americans.
+        \begin{multline*}
+            \log(hourwage) = \beta_0 + \beta_1black*covid + \beta_2black*female + \beta_3black*covidpayremote +\\ \beta_4black*covidunable + \beta_5black*covidlook + \beta_6black*OCC + \beta_7EDUC + \beta_8AGE +\\ \beta_9AGE.squared + \beta_10notmarried + \beta_11nchild + u
+        \end{multline*}
+
+
+    \end{itemize}
+\section{Results}
+The main results are reported in Table \ref{tab:estimates}. There are six regression models present in the table. 
+
+Model 1 in Table \ref{tab:estimates} allowed me to obtain a causal relationship between the independent variable "black" and the dependent variable "loghourwage". On average, over a six year period (2015-2021), Black Americans earned 11.7\% less than their white counterparts per hour. This result is statistically significant at the 5\% level (p\textless0.05). Therefore, we reject the null hypothesis that White and Black Americans' hourly wages are equal in favor of the alternative hypothesis that Black Americans earn less than White Americans. The robust standard error for the variable "black" is 0.005 signifying that Black Americans earn between 11.2\% and 12.2\% less than their White counterparts across all occupations and that this difference is significant at the 5\% level. While Model 1 is statistically significant, we observe an R-squared value of 0.005. This indicates that the variable "black" only accounts for 0.5\% of the variation in hourly wages. I expect Gauss-Markov Assumption \#4 to be violated due to a long list of unobservable variables that are likely correlated to the variable "black" (ie: cognitive ability, preference for specific types of jobs, parents' education levels, etc.).
+
+Model 2 in Table \ref{tab:estimates} represents a multiple regression model. I include the independent variables "black", "female", "AGE", "AGE.squared", "EDUC", "OCC", "notmarried", and "nchild". On average, over a six year period, Black Americans earned 10.4\% less than their White counterparts per hour. This result is statistically significant at the 5\% level (p\textless0.05). Therefore, we reject the null hypothesis in favor of the alternative hypothesis. The racial hourly wage gap is likely smaller due to several mitigating variables that are included in the regression. Specifically, by observing the female variable, we conclude that on average, women earned 10.9\% less than their male counterparts per hour. The robust standard error for the variable "black" is 0.005 signifying that Black Americans earn between 9.9\% and 10.9\% less than White Americans and that this difference is statistically significant at the 5\% level. The R-squared for Model 2 is 0.126. This indicates that the independent variables listed in Model 2 only account for 12.6\% of the variation in hourly wage. While this coefficient of determination is higher, it is still considered low.
+
+Model 3 in Table \ref{tab:estimates} represents a multiple regression model with the variable "black" interacting with the variable "female". I incorporate this interaction term to demonstrate the direct relationship between hourly wage and African American women. The independent variables listed in Model 2 are reused in Model 3. On average, over the same six year period, female African Americans earn 13.2\% less than their White counterparts per hour. This result is statistically significant at the 5\% level (p\textless0.05). Therefore, we reject the null hypothesis in favor of the alternative hypothesis. We observe an increase in the racial earnings gap due to the interaction with the variable "female". The robust standard error for the variable "black" is 0.008 which signifies that female African Americans earn between 12.4\% and 14.0\% less than male White Americans and this result is statistically significant at the 5\% level. The R-squared for Model 3 is also 0.126. This indicates that the independent variables listed in Model 3 only account for 12.6\% of the variation in hourly wage.
+
+Model 4 in Table \ref{tab:estimates} represents a multiple regression model with the variable "black" interacting with the variable "OCC" (occupation). I incorporate this interaction term to demonstrate the direct relationship between hourly wage and employed African Americans. The independent variables listed in Model 2 are reused in Model 4. On average, employed African Americans earn 12.3\% less than their White counterparts per hour. This result is statistically significant at the 5\% level (p\textless0.05). Therefore, we reject the null hypothesis in favor of the alternative hypothesis. We observe a decrease in the coefficient for "black" compared to the coefficient in Model 2 showing that the hourly wage gap increases for employed African Americans. The robust standard error for the variable "black" is 0.009 which signifies that working African Americans earn between 11.4\% and 13.2\% less than White Americans and this result is statistically significant at the 5\% level. The R-squared for Model 4 is also 0.126. This indicates that the independent variables listed in Model 4 only account for 12.6\% of the variation in hourly wage.
+
+Model 5 in Table \ref{tab:estimates} represents a multiple regression model with the variable "black" interacting with the variable "EDUC" (education). I incorporate this interaction term to demonstrate the direct relationship between hourly wage and educated African Americans. The independent variables listed in Model 2 are reused in Model 5. On average, educated (minimum bachelor's degree) African Americans earn 55.4\% more than their White counterparts per hour. This result is statistically significant at the 5\% level (p\textless0.05). We observe an extreme increase in the coefficient for "black" compared to the coefficient in Model 2 showing that the hourly wage gap does not exist for African Americans holding at least a bachelor's degree. The robust standard error is 0.107 signifying that educated African Americans earn between 44.7\% and 66.1\% more than White Americans and this result is statistically significant at the 5\% level. The R-squared for Model 5 is also 0.126. This indicates that the independent variables listed in Model 5 only account for 12.6\% of the variation in hourly wage.
+
+Model 6 in Table \ref{tab:estimates} represents a multiple regression model which includes four interaction terms and new COVID-19 variables. The variable "black" interacts with the variable "female", "OCC", "covid", "covidpayremote", "covidunable", and "covidlook". I incorporate these interaction terms to demonstrate the effects of the coronavirus on African American individuals' hourly wages. The independent variables listed in Model 2 are reused in Model 6. The variables "covid", "covidpayremote", "covidunable", and "covidlook" are also added to Model 6. On average, within the period of April 2020 and February 2021, African Americans earned 14.9\% less than their White counterparts per hour when accounting for COVID-19 effects. This result is statistically significant at the 5\% level (p\textless0.05). Therefore, we reject the null hypothesis that African Americans and White Americans earned identical hourly wages during the pandemic in favor of the alternative hypothesis that African Americans earned less per hour. The robust standard error for the variable "black" is 0.014 signifying that African Americans impacted by COVID-19 earned between 13.5\% and 16.3\% less than their White counterparts and this result is statistically significant at the 5\% level. The R-squared for Model 6 is 0.128. This indicates that the independent variables listed in Model 6 account for 12.8\% of the variation in hourly wage. While this coefficient is slightly higher than the other models, it is still considered low. Once again, I expect Gauss-Markov Assumption 4 to be violated due to a long list of unobservable variables that are likely correlated to the variable "black".
+
+
+\section{Discussion and Conclusions}
+
+My goal when conducting this research was to examine the differences in earnings between African Americans and White Americans. I also sought to explore the disproportionate effects of COVID-19 on African Americans as opposed to White Americans. While the hourly wage gap observed throughout this research is large and significant, we can expect a higher wage gap when observing income wage per year. Furthermore, after investigating specific COVID-19 effects, we observe a 4\% higher hourly wage gap. This result shows that the pandemic adversely affected African Americans' hourly wages. While the higher minimum wage implemented in the 1960s reduced over 20\% of the wage gap (\citet{DerenoncourtMontialoux2020}, the residual wage gap remains high and significant. In summary, my six regression models show that, after controlling for other variables that could influence hourly earnings, Black Americans continue facing significant wage-based discrimination. Nevertheless, the racial earnings gap only explains a fraction of the discrimination faced by African Americans. This vulnerable social group suffers from increased taste-based discrimination and statistical discrimination. In addition, they face institutional barriers preventing them from achieving the "American Dream"
+(\citet{Koechlin2019}.
+
+After controlling for gender, age, occupation type, level of education, maritual status, number of children in the household, and employment during the pandemic, my six linear regressions show that, on average, African Americans earned at least 10.4\% less than their white counterparts per hour. When employing the interaction terms between "black*female", "black*OCC", "black*EDUC", "black*covid", "black*covidpayremote", "black*covidunable", and "black*covidlook", the inequality of hourly income rose between 1 and 3\%. The interaction terms show that the wage gap worsens once African Americans enter industry and again when the coronavirus swept the nation. According to \citet{LuLi2021}, the results I gathered can also be explained by employment mismatch and through implicit racial bias. In other words, this earnings gap exists due to prejudice job placement. 
+
+The racial earnings gap is a problem for many reasons. First, it shows that systemic racism is only one of the institutional barriers African Americans must face when entering the job market. After eliminating the need to compare human capital models between African Americans and White Americans, the residual wage gap still grew by 3\% when interacting the variable "black" with the variable "OCC" (occupation). Not only do African Americans face unequal job opportunities (\citet{LuLi2021}, the significant lower hourly pay would also deter African Americans from entering the labor force altogether. Furthermore, the deterrence experienced by this marginalized group hurts the economy as a whole since it suffers from a lack of diversity which translates to inadequate backgrounds and experience that would allow a field to evolve. Next, when adding the coronavirus factor, inequity is further exposed. African Americans were worse off due to COVID-19 factors; they were less likely to hold a paid job during the pandemic, they were more likely to be unable to work during the pandemic, and they were more likely to be looking for work.
+
+The largest limitation of this study is the low R-squared values across all the regression outputs. While my results were significant, the low coefficients of determination show that my independent variables to not account for much of the variation in hourly wages. Additionally, Gauss-Markov Assumption \#4 is likely to be violated; there exist multiple unobservable and unquantifiable factors such as cognitive ability, motivation, and mental health status.
+
+This paper contributes to the labor economics literature by providing another quantitative earnings gap analysis. Furthermore, it provides a new research lens by investigating the disproportionate effects of the coronavirus on African Americans. In the future, it would be beneficial to study the racial earnings gap across specific occupations such as STEM fields. It would also be interesting to study the racial earnings gap within educational institutions or within businesses. It is pertinent that society continues to bring awareness to social injustices so that it may learn, evolve, and solve gender and race based earning gaps.
+\bibliographystyle{jpe}
+\nocite{*}
+\bibliography{ReferencesFP.bib}
+\section{Figures and Tables}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{incomeAA.png}
+    \caption{African American Income Over Time}
+    \label{fig:fig1}
+\end{figure}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{incomeW.png}
+    \caption{White American Income Over Time}
+    \label{fig:fig2}
+\end{figure}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lcccc}
+     Variable &	Source & Year &	O
+     bservations &	Type\\
+loghourwage & IPUMS-CPS & 2015-2021	& 91219 & Dependent\\
+black &	IPUMS-CPS & 2015-2021 & 91219 & Independent\\
+female & IPUMS-CPS & 2015-2021 & 91219 & Independent\\
+AGE & IPUMS-CPS & 2015-2021 & 91219 & Independent\\
+AGE.squared	& IPUMS-CPS	& 2015-2021	& 91219	& Independent\\
+EDUC &	IPUMS-CPS &	2015-2021 &	91219 &	Independent\\
+nchild & IPUMS-CPS & 2015-2021 & 91219 & Independent\\
+OCC	& IPUMS-CPS	& 2015-2021	& 91219	& Independent\\
+covid & IPUMS-CPS & 2020-2021 & 91219 & Independent\\
+covidpayremote & IPUMS-CPS & 2020-2021 & 91219 & Independent\\
+covidunable	& IPUMS-CPS	& 2020-2021	& 91219	& Independent\\
+covidlook & IPUMS-CPS & 2020-2021 & 91219 & Independent\\
+notmarried & IPUMS-CPS & 2015-2021 & 91219 & Independent\\
+    \end{tabular}
+    \caption{Description of Selected Variables}
+    \label{tab:variables}
+\end{table}
+\input{table2fp}
+
+\end{document}
